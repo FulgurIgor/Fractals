@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#рисуем фрактал..
+
+filename="mpi_out"
+for i in `seq 1000 1300`
+do
+echo $i
+mpisubmit.bg -m vn -n 256 frac_mpi.exe -- 1024 1024 -1 -1 -0.745852 0.1243799986674 1.02 $i 1024 12 0 0 1 1 3 6 9 $filename$i
+echo ""
+done
